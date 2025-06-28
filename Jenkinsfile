@@ -22,7 +22,11 @@ pipeline {
     }
     post {
         always {
-            sh 'docker logout'
+            script {
+                node {
+                    sh 'docker logout'
+                }
+            }
         }
     }
 }
